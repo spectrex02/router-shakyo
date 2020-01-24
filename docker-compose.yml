@@ -1,0 +1,18 @@
+version: '3'
+
+services: 
+    router:
+        build: .
+        container_name: router
+        tty: true
+        privileged: true
+        volumes:
+            - ./src:/usr/local/router-shakyo
+
+    host:
+        build: .
+        container_name: host
+        tty: true
+        privileged: true
+        # volumes:
+            # - ./src:/usr/local/router-shakyo
