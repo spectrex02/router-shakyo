@@ -1,2 +1,4 @@
-src/chapter2/*
+src/chapter*/*
 !*.c
+!*.h
+!Makefile
