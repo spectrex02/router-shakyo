@@ -10,7 +10,16 @@ services:
             - ./src:/usr/local/router-shakyo
         networks:
             - bridge1
+            - router-bridge
+
+    vyos:
+        build: ./vyos/ 
+        container_name: vyos
+        tty: true
+        privileged: true
+        networks:
             - bridge2
+            - router-bridge
 
     host1:
         build: .
@@ -34,4 +43,6 @@ networks:
     bridge1:
         driver: bridge
     bridge2:
+        driver: bridge
+    router-bridge:
         driver: bridge
